@@ -1,0 +1,155 @@
+@import url("https://use.typekit.net/awg2osu.css");
+body {
+  margin: 0;
+  padding: 0;
+
+
+  -webkit-font-smoothing: antialiased;
+  color: #fff;
+  background: linear-gradient(orange -50%, #2130e4);
+  font-size: 1em;
+}
+
+@media (max-width: 600px) {
+  body {
+    font-size: 75%;
+  }
+
+  .tag h1 {
+    font-size: 4em;
+  }
+}
+
+h1 {
+  font-weight: 800;
+  text-shadow: 0 3px 3px rgba(0, 0, 0, .5);
+  font-size: 5em;
+}
+
+h2 {
+  color: #ff9666;
+  text-shadow: 0 0px 15px rgba(0, 0, 0, .5);
+  text-transform: lowercase;
+  letter-spacing: 3px;
+  font-weight: 400;
+  background: -webkit-linear-gradient(#eee 5%, #ff9666 67%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+ul.vanilla, ol.vanilla {
+  list-style: none;
+  padding-left: 0;
+}
+
+a {
+  color: #fff59a;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.divider {
+  width: 75%;
+  margin: 25px 0;
+  position: relative;
+}
+
+.divider::before {
+  position: absolute;
+  content: "";
+  left: 0;
+  top: 0;
+  height: 2px;
+  width: 50%;
+  background: linear-gradient(to right, transparent, #81669e);
+  z-index: 123;
+}
+
+.divider::after {
+  position: absolute;
+  content: "";
+  right: 0;
+  top: 0;
+  height: 2px;
+  width: 50%;
+  background: linear-gradient(to left, transparent, #81669e);
+  z-index: 123;
+}
+
+* {
+  box-sizing: border-box;
+  line-height: 1.615em;
+}
+
+.content {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+.tag {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+  animation: tag-in 800ms ease-in-out;
+  max-width: 550px;
+  padding: 20px 25px;
+}
+
+
+@keyframes tag-in {
+  0% {
+    opacity: 0;
+    top: -80px
+  }
+
+  60% {
+    top: 25px;
+  }
+
+  100% {
+    opacity: 1;
+    top: 0;
+  }
+}
+
+.tag h1 {
+  margin-bottom: 0;
+  margin-top: 25px;
+}
+
+.tag .avatar {
+  position: relative;
+  border-radius: 50%;
+  border: 2px solid rgba(166, 118, 91, 1);
+  box-shadow: inset 2px 5px 2px rgba(0,0,0,.2);
+  overflow: hidden;
+}
+
+.tag .avatar img {
+  width: 200px;
+  position: relative;
+  bottom: -5px;
+  filter: drop-shadow(0px 14px 16px rgba(0,0,0,.4));
+}
+
+.progress-bar {
+  width: 100%;
+  height: 10px;
+  border-radius: 10px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, .05);
+  padding: 3px;
+}
+
+.progress-bar .progress {
+  background: linear-gradient(to right, #2f862f, #5ee45e);
+  height: 100%;
+  border-radius: 10px;
+}
