@@ -1,78 +1,20 @@
-.skills ul li {
-    font-size: 1em;
-    display: flex;
-    align-items: center;
-    text-transform: lowercase;
-    margin-bottom: 5px;
-}
-
-.skills ul li i {
-    margin-right: 10px;
-    min-width: 30px;
-    position: relative;
-    top: 3px;
-}
-
-.skills ul li a {
-    position: relative;
-}
-
-.skills .outlet {
-    margin-top: 25px;
-}
-
-ul li a.active:before {
-    content: '>';
-    background: transparent;
-    position: absolute;
-    left: -25px;
-    top: 1px;
-    font-weight: 900;
-    font-size: 14px;
-}
-
-ul li .fake-link {
-    position: relative;
-    color: #fff59a;
-}
-
-ul li a:before, ul li .fake-link:before {
-    content: '';
-    background: #81669e;
-    position: absolute;
-    left: -25px;
-    top: 50%;
-    width: 5px;
-    height: 5px;
-    border-radius: 50%;
-    font-weight: 900;
-    font-size: 14px;
-}
-
-.skills ul li.node a {
+.skills ul li.node a, .skills ul li.node a.active:before {
     color: #7dd88d;
 }
 
-.skills ul li.react a {
-    color: #7fb1ff;
+.skills ul li.react a, .skills ul li.react a.active:before  {
+    color: #95c8ff;
 }
 
-.skills ul li.sql a {
+.skills ul li.sql a, .skills ul li.sql a.active:before {
     color: #00ceff;
 }
 
-.skills ul li.ui-ux a {
-    color: #ca6bff;
+.skills ul li.ui-ux a, .skills ul li.ui-ux a.active:before {
+    color: #f48fff;
 }
 
-.skills ul li.analytics a {
+.skills ul li.analytics a, .skills ul li.analytics a.active:before {
     color: #f1b401;
 }
 
-.skills .outlet {
-    transition: all 500ms ease;
-}
-
-.skills .outlet .skill-progress {
-    margin-bottom: 25px;
-}

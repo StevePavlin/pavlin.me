@@ -1,14 +1,10 @@
 import React from 'react';
+import { Progress } from "./Progress";
 
 export const Postgres = props => {
   return (
     <div>
-      <div className="skill-progress">
-        Experience
-        <div className="progress-bar">
-          <div className="progress" style={{width: '90%'}}/>
-        </div>
-      </div>
+      <Progress width={90}/>
       <p>
         As crazy as it sounds, I never even used an ORM until 2018. I've been used to writing raw sql and using stored procedures.
         Finally picking up Sequelize was a godsend, but I was happy I learned alot about whats "under the hood" prior.
@@ -17,7 +13,7 @@ export const Postgres = props => {
         <br />
 
         Knowledge:
-        <ul>
+        <ul className="bullets">
           <li>
             <span>
               <span className="fake-link">

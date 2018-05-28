@@ -9,17 +9,21 @@
 }
 
 .nav-content .outlet>div {
-  animation: 500ms fade-in ease-in-out;
-  transition: 500ms width ease;
+  animation: 500ms outlet-in ease-in-out;
+  position: relative;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, .25);
+
 }
 
-@keyframes fade-in {
+@keyframes outlet-in {
   from {
     opacity: 0;
+    left: -50px;
   }
 
   to {
     opacity: 1;
+    left: 0;
   }
 }
 
@@ -42,6 +46,11 @@ nav a {
   margin: 0 25px;
   color: #ccc;
   filter: drop-shadow(0 0 5px rgba(0,0,0,.2));
+  transition: all 500ms ease;
+}
+
+nav a i {
+  width: 40px;
 }
 
 

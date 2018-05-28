@@ -29,18 +29,67 @@ h1 {
 h2 {
   color: #ff9666;
   text-shadow: 0 0px 15px rgba(0, 0, 0, .5);
-  text-transform: lowercase;
   letter-spacing: 3px;
-  font-weight: 400;
-  background: -webkit-linear-gradient(#eee 5%, #ff9666 67%);
+  background: -webkit-linear-gradient(#fff9db 48%, #fff59a 52%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  font-weight: 800;
 }
 
-ul.vanilla, ol.vanilla {
-  list-style: none;
-  padding-left: 0;
+ul {
+  margin: 25px 0 50px;
 }
+
+ul li {
+  font-size: 1em;
+  display: flex;
+  align-items: center;
+  text-transform: lowercase;
+  margin-bottom: 5px;
+}
+
+ul li i {
+  margin-right: 10px;
+  min-width: 30px;
+  position: relative;
+  top: 3px;
+}
+
+ul li a {
+  position: relative;
+}
+
+ul.bullets li a:before {
+  content: '•';
+  top: .5px;
+}
+
+ul li a.active:before {
+  content: '>';
+  position: absolute;
+  left: -25px;
+  font-weight: 900;
+  font-size: 14px;
+
+  animation: arrow-pulse 1s ease-in-out infinite;
+}
+
+
+ul li a:before, ul li .fake-link:before {
+  position: absolute;
+  color: #81669e;
+  left: -25px;
+  top: 2.5px;
+  font-weight: 900;
+  font-size: 14px;
+}
+
+
+ul li .fake-link {
+  position: relative;
+  color: #fff59a;
+}
+
 
 a {
   color: #fff59a;
@@ -51,6 +100,40 @@ a {
 a:hover {
   text-decoration: underline;
 }
+
+* {
+  box-sizing: border-box;
+  line-height: 1.615em;
+}
+
+h3 {
+  text-transform: lowercase;
+  position: relative;
+  padding-left: 20px;
+}
+
+h3:after {
+  position: absolute;
+  content: '> ';
+  left: 0;
+  color: #81669e;
+  font-weight: 800;
+}
+
+@keyframes arrow-pulse {
+  0% {
+    transform: translateX(1px);
+  }
+
+  50% {
+    transform: translateX(-1px);
+  }
+
+  100% {
+    transform: translateX(1px);
+  }
+}
+
 
 .divider {
   width: 75%;
@@ -80,15 +163,10 @@ a:hover {
   z-index: 123;
 }
 
-* {
-  box-sizing: border-box;
-  line-height: 1.615em;
-}
-
 .content {
-  height: 100vh;
   display: flex;
   justify-content: center;
+  min-height: 100vh;
 }
 
 .tag {
@@ -127,8 +205,8 @@ a:hover {
 .tag .avatar {
   position: relative;
   border-radius: 50%;
-  border: 2px solid rgba(166, 118, 91, 1);
-  box-shadow: inset 2px 5px 2px rgba(0,0,0,.2);
+  #border: 2px solid rgba(166, 118, 91, 1);
+  box-shadow: inset 0px 5px 15px rgba(0,0,0,.1);
   overflow: hidden;
 }
 
@@ -144,7 +222,7 @@ a:hover {
   height: 10px;
   border-radius: 10px;
   overflow: hidden;
-  background: rgba(255, 255, 255, .05);
+  background: #81669e;
   padding: 3px;
 }
 
@@ -152,4 +230,10 @@ a:hover {
   background: linear-gradient(to right, #2f862f, #5ee45e);
   height: 100%;
   border-radius: 10px;
+  transition: width 1s ease;
+}
+
+
+.muted {
+  color: #796da7 !important;
 }

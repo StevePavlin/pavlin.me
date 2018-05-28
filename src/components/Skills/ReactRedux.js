@@ -1,14 +1,10 @@
 import React from 'react';
+import { Progress } from "./Progress";
 
 export const ReactRedux = props => {
   return (
     <div>
-      <div className="skill-progress">
-        Experience
-        <div className="progress-bar">
-          <div className="progress" style={{width: '85%'}}/>
-        </div>
-      </div>
+      <Progress width={75}/>
       <p>
         After spending the summer of 2016 trying angular 2 in release candidate stage, I decided
         I wanted to try React.
@@ -19,7 +15,7 @@ export const ReactRedux = props => {
         <br />
         Libraries used:
 
-        <ul>
+        <ul className="bullets">
           <li>
             <span>
               <a target="_blank" href="https://redux.js.org/">Redux</a> – State management

@@ -1,14 +1,10 @@
 import React from 'react';
+import { Progress } from "./Progress";
 
 export const Node = props => {
   return (
     <div>
-      <div className="skill-progress">
-        Experience
-        <div className="progress-bar">
-          <div className="progress" style={{width: '100%'}}/>
-        </div>
-      </div>
+      <Progress width={94}/>
       <p>
         My node journey began in 2015. This language took me from writing awful nested callback
         christmas trees to writing clear, concise async await code.
@@ -16,7 +12,7 @@ export const Node = props => {
         <br />
         Over the many private projects that I've worked with clients on, here's the tech/libraries I'm become proficient with:
 
-        <ul>
+        <ul className="bullets">
           <li>
             <span>
               <a target="_blank" href="https://github.com/OptimalBits/bull">Express</a> – MVC api structure

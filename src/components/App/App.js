@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import { Nav } from "../Nav";
-import { Link, Route } from 'react-router-dom';
+
 export class App extends Component {
   render() {
     return (

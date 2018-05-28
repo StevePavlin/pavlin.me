@@ -1,43 +1,12 @@
 import React, { Component } from 'react';
 import './Skills.css';
-import { Switch, NavLink, Route } from 'react-router-dom';
+import { Switch, Link, NavLink, Route, Redirect } from 'react-router-dom';
 import { Node } from "./Node";
 import { ReactRedux } from "./ReactRedux";
 import {Postgres} from "./Postgres";
+import { Analytics } from "./Analytics";
+import { UIUX } from './UIUX';
 
-
-const skills = [
-  {
-    slug: 'node',
-    icon: 'fab fa-node-js',
-    name: 'Node.js',
-    component: <Node />
-  },
-  {
-    slug: 'sql',
-    icon: 'fas fa-database',
-    name: 'PostgreSQL',
-    component: <Postgres />
-  },
-  {
-    slug: 'react',
-    icon: 'fab fa-react',
-    name: 'React/Redux',
-    component: <ReactRedux />
-  },
-  {
-    slug: 'ui-ux',
-    icon: 'fas fa-object-ungroup',
-    name: 'UI/UX',
-    component: <Node />
-  },
-  {
-    slug: 'analytics',
-    icon: 'fas fa-chart-pie',
-    name: 'Analytics',
-    component: <Node />
-  }
-];
 
 export class Skills extends Component {
 
@@ -53,29 +22,44 @@ export class Skills extends Component {
 
     return (
       <div className="skills">
+        <h3>Skills</h3>
         <ul className="vanilla">
-          {
-            skills.map((skill, index) => {
-              const active = skill.slug === this.state.open.slug;
-
-              return (
-                <li
-                  key={index}
-                  onClick={() => this.setState({open: !active ? skill : {} })}
-                  className={skill.slug}>
-                  <a className={active ? 'active' : ''}>
-                    <i className={skill.icon}/>{skill.name}
-                  </a>
-                </li>
-              )
-            })
-          }
+          <li className="node">
+            <NavLink to="/skills/node-js">
+              <i className="fab fa-node-js"/>Node.js
+            </NavLink>
+          </li>
+          <li className="sql">
+            <NavLink to="/skills/sql">
+              <i className="fas fa-database"/>PostgreSQL
+            </NavLink>
+          </li>
+          <li className="react">
+            <NavLink to="/skills/react">
+              <i className="fab fa-react"/>React/Redux
+            </NavLink>
+          </li>
+          <li className="analytics">
+            <NavLink to="/skills/analytics">
+              <i className="fas fa-chart-pie"/>Analytics
+            </NavLink>
+          </li>
+          <li className="ui-ux">
+            <NavLink to="/skills/ui-ux">
+              <i className="fas fa-object-ungroup"/>UI/UX
+            </NavLink>
+          </li>
         </ul>
 
         <div className="outlet">
-          {
-            this.state.open && this.state.open.component
-          }
+          <Redirect from="/skills" to="/skills/node-js" />
+          <Switch>
+            <Route path="/skills/node-js" component={Node} />
+            <Route path="/skills/sql" component={Postgres} />
+            <Route path="/skills/react" component={ReactRedux} />
+            <Route path="/skills/analytics" component={Analytics} />
+            <Route path="/skills/ui-ux" component={UIUX} />
+          </Switch>
         </div>
       </div>
     );
